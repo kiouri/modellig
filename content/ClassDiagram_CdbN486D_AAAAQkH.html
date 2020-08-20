@@ -1,0 +1,2056 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Class Diagram - ПИР ФНС ЕГРЮЛ</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_top">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_bottom">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_left">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_right">
+	</div>
+	<canvas width="100" style="position:absolute; z-index:2; visibility:hidden" id="spotlight_c" height="100">
+	</canvas>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesTop">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesRight">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+			</tr>
+			<tr>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute;z-index:4;visibility:hidden" id="linkPopupMenuLayer">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="linkPopupMenuTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="referenceIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="subdiagramIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="transitorIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="documentationIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Documentation.png" style="border:none" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		ПИР	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="referencedBys">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="referencedBysTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="vplink">
+		<table border="1" cellpadding="0" cellspacing="0" bordercolor="#A9BFD3">
+			<tr>
+				<td>
+					<table border="0" cellpadding="0" width="100%" cellspacing="0">
+						<tr style="background:#DDDDDD">
+							<td style="font-size: 12px;" align="left">
+								<select onchange="vpLinkToggleName()" id="vplink-linkType">
+	<option value="Project Link">Project Link</option>
+	<option value="Page URL">Page URL</option>
+</select>
+							</td>
+							<td style="font-size: 12px;" align="right">
+								<input onclick="javascript: vpLinkToggleName()" id="vplink-checkbox" type="checkbox" />
+								<label for="vplink-checkbox">with Name</label>							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="vplink-text" style="width: 348px; height: 60px; border-color: #7EADD9; outline: none;"></textarea>				</td>
+			</tr>
+		</table>
+	</div>
+	<p>
+<a href="Package_wTB8586D_AAAARPU.html" class="PageParentTitle">ПИР ФНС ЕГРЮЛ : Package</a>	</p>
+	<p class="PageTitle">
+		<span id="PageTitleText">
+			Class Diagram - ПИР ФНС ЕГРЮЛ		</span>
+<a onclick="javascript: showVpLink('ПИР ФНС ЕГРЮЛ Рабочий.vpp://diagram/CdbN486D.AAAAQkH', '&#x41f;&#x418;&#x420; &#x424;&#x41d;&#x421; &#x415;&#x413;&#x420;&#x42e;&#x41b;\n&#x41f;&#x418;&#x420; &#x424;&#x41d;&#x421; &#x415;&#x413;&#x420;&#x42e;&#x41b; &#x420;&#x430;&#x431;&#x43e;&#x447;&#x438;&#x439;.vpp://diagram/CdbN486D.AAAAQkH', '&#x41f;&#x418;&#x420; &#x424;&#x41d;&#x421; &#x415;&#x413;&#x420;&#x42e;&#x41b;', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
+	<div style="position: relative; padding-bottom: 20px;">
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: absolute; top: 0; left: 0; z-index: 20;" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),hideLinkPopup(),hideReferencedBys();">
+			<tr>
+				<td>
+<span class="TableContent">Jump to:</span>					<select id="SelectShape" class="TableContent" onChange="scrollWin('diagram', this.value);hideLinkPopup();showSpotLight('diagram', this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|546.0|369.0|129.0|40.0|Class_d9_1AC6D_AAAAYVh.html|Class_d9_1AC6D_AAAAYVh.html|d9_1AC6D.AAAAYVg" id="optiond9_1AC6D.AAAAYVg">Тип элемента Улица : Class</option>
+<option value="shape|892.0|366.0|202.0|40.0|Class_d431AC6D_AAAAYVY.html|Class_d431AC6D_AAAAYVY.html|d431AC6D.AAAAYVX" id="optiond431AC6D.AAAAYVX">Тип элемента Населенный пункт : Class</option>
+<option value="shape|719.0|366.0|128.0|40.0|Class_HV71AC6D_AAAAYVP.html|Class_HV71AC6D_AAAAYVP.html|7V71AC6D.AAAAYVO" id="option7V71AC6D.AAAAYVO">Тип элемента Район : Class</option>
+<option value="shape|372.0|369.0|130.0|40.0|Class_Xrz1AC6D_AAAAYVG.html|Class_Xrz1AC6D_AAAAYVG.html|nrz1AC6D.AAAAYVF" id="optionnrz1AC6D.AAAAYVF">Тип Элемента Город : Class</option>
+<option value="shape|1104.0|233.0|320.0|107.0|Class_jSFOP86D_AAAAZVV.html|Class_jSFOP86D_AAAAZVV.html|jSFOP86D.AAAAZVU" id="optionjSFOP86D.AAAAZVU">ФИО, ИНН : Class</option>
+<option value="shape|1469.0|1624.0|321.0|75.0|Class_Cs8Qj86D_AAAAaNF.html|Class_Cs8Qj86D_AAAAaNF.html|Us8Qj86D.AAAAaMz" id="optionUs8Qj86D.AAAAaMz">Сведения о КФХ : Class</option>
+<option value="shape|369.0|1051.0|322.0|107.0|Class_YM3iN86D_AAAAUMy.html|Class_YM3iN86D_AAAAUMy.html|YM3iN86D.AAAAUMx" id="optionYM3iN86D.AAAAUMx">Сведения о наименовании ЮЛ : Class</option>
+<option value="shape|736.0|2063.0|322.0|40.0|Class_2vLoN86D_AAAAUE0.html|Class_2vLoN86D_AAAAUE0.html|avLoN86D.AAAAUEi" id="optionavLoN86D.AAAAUEi">Дата : Class</option>
+<option value="shape|368.0|2.0|323.0|276.0|Class_zDul186AU_W0dxI6.html|Class_zDul186AU_W0dxI6.html|TDul186AU_W0dxI4" id="optionTDul186AU_W0dxI4">Адрес РФ : Class</option>
+<option value="shape|2.0|1051.0|322.0|107.0|Class_ABgVu86D_AAAAVsR.html|Class_ABgVu86D_AAAAVsR.html|ABgVu86D.AAAAVsQ" id="optionABgVu86D.AAAAVsQ">Сведения о недостоверности : Class</option>
+<option value="shape|1470.0|715.0|322.0|120.0|Class_HFk5u86D_AAAAVrf.html|Class_HFk5u86D_AAAAVrf.html|HFk5u86D.AAAAVre" id="optionHFk5u86D.AAAAVre">Сведения о виде учредителя (участника) и (при необходимости) наименовании муниципального образования и региона : Class</option>
+<option value="shape|1837.0|715.0|322.0|114.0|Class_nx5ou86D_AAAAUiC.html|Class_nx5ou86D_AAAAUiC.html|nx5ou86D.AAAAUiB" id="optionnx5ou86D.AAAAUiB">Сведения о юридическом лице, от имени которого действует заявитель : Class</option>
+<option value="shape|369.0|2063.0|322.0|48.0|Class_3BiQu86D_AAAAUg_.html|Class_3BiQu86D_AAAAUg_.html|3BiQu86D.AAAAUg." id="option3BiQu86D.AAAAUg.">Заявитель : Class</option>
+<option value="shape|2.0|2063.0|322.0|48.0|Class_y3FKG86D_AAAAYko.html|Class_y3FKG86D_AAAAYko.html|y3FKG86D.AAAAYkn" id="optiony3FKG86D.AAAAYkn">Сведения о статусе записи : Class</option>
+<option value="shape|2.0|1624.0|322.0|77.0|Class_U3hKG86D_AAAAYkT.html|Class_U3hKG86D_AAAAYkT.html|U3hKG86D.AAAAYkS" id="optionU3hKG86D.AAAAYkS">Сведения о свидетельстве, подтверждающем факт внесения записи в ЕГРЮЛ : Class</option>
+<option value="shape|736.0|1204.0|322.0|104.0|Class_ptOKG86D_AAAAYkE.html|Class_ptOKG86D_AAAAYkE.html|ptOKG86D.AAAAYkD" id="optionptOKG86D.AAAAYkD">Сведения о документах, представленных при внесении записи в ЕГРЮЛ : Class</option>
+<option value="shape|1837.0|1353.0|322.0|90.0|Class_046KG86D_AAAAYjy.html|Class_046KG86D_AAAAYjy.html|U46KG86D.AAAAYjx" id="optionU46KG86D.AAAAYjx">Сведения о заявителе : Class</option>
+<option value="shape|2.0|1863.0|322.0|62.0|Class__wiKG86D_AAAAYjh.html|Class__wiKG86D_AAAAYjh.html|.wiKG86D.AAAAYjg" id="option.wiKG86D.AAAAYjg">Сведения о регистрирующем (налоговом) органе : Class</option>
+<option value="shape|1837.0|1970.0|322.0|48.0|Class_ZFaSG86D_AAAAYiw.html|Class_ZFaSG86D_AAAAYiw.html|RFaSG86D.AAAAYie" id="optionRFaSG86D.AAAAYie">Сведения о причине внесения записи : Class</option>
+<option value="shape|1102.0|2.0|322.0|189.0|Class_zo6CG86D_AAAAXdD.html|Class_zo6CG86D_AAAAXdD.html|To6CG86D.AAAAXdC" id="optionTo6CG86D.AAAAXdC">Сведения о записях, внесенных в ЕГРЮЛ : Class</option>
+<option value="shape|1103.0|1052.0|322.0|106.0|Class_5GMUG86D_AAAAXZj.html|Class_5GMUG86D_AAAAXZj.html|5GMUG86D.AAAAXZi" id="option5GMUG86D.AAAAXZi">Сведения о правопредшественнике и правопреемнике : Class</option>
+<option value="shape|1837.0|894.0|322.0|107.0|Class_PVtkG86D_AAAAXZQ.html|Class_PVtkG86D_AAAAXZQ.html|PVtkG86D.AAAAXZP" id="optionPVtkG86D.AAAAXZP">Сведения о юридических лицах, участвующих в реорганизации : Class</option>
+<option value="shape|369.0|1204.0|322.0|104.0|Class_RStEG86D_AAAAXYs.html|Class_RStEG86D_AAAAXYs.html|RStEG86D.AAAAXYr" id="optionRStEG86D.AAAAXYr">Сведения о форме реорганизации (статусе) ЮЛ : Class</option>
+<option value="shape|1103.0|1862.0|322.0|51.0|Class_mzCEG86D_AAAAXYa.html|Class_mzCEG86D_AAAAXYa.html|mzCEG86D.AAAAXYZ" id="optionmzCEG86D.AAAAXYZ">Сведения об участии в реорганизации : Class</option>
+<option value="shape|1103.0|895.0|322.0|110.0|Class_aK0YG86D_AAAAXWs.html|Class_aK0YG86D_AAAAXWs.html|qK0YG86D.AAAAXWr" id="optionqK0YG86D.AAAAXWr">Сведения о представительствах, филиалах, иных ЮЛ : Class</option>
+<option value="shape|1837.0|1491.0|322.0|79.0|Class_CmdoG86D_AAAAXWS.html|Class_CmdoG86D_AAAAXWS.html|8mdoG86D.AAAAXWR" id="option8mdoG86D.AAAAXWR">Сведения об учете в налоговом органе : Class</option>
+<option value="shape|369.0|508.0|322.0|158.0|Class_rwJoG86D_AAAAXWD.html|Class_rwJoG86D_AAAAXWD.html|rwJoG86D.AAAAXWC" id="optionrwJoG86D.AAAAXWC">Адрес Ин : Class</option>
+<option value="shape|1470.0|1491.0|322.0|85.0|Class_Fbs_686D_AAAAXR7.html|Class_Fbs_686D_AAAAXR7.html|Fbs_686D.AAAAXR6" id="optionFbs_686D.AAAAXR6">Сведения о приостановлении действия лицензии : Class</option>
+<option value="shape|1469.0|2.0|322.0|188.0|Class_7FoP686D_AAAAXQ_.html|Class_7FoP686D_AAAAXQ_.html|bFoP686D.AAAAXQ9" id="optionbFoP686D.AAAAXQ9">Сведения о лицензиях, выданных ЮЛ : Class</option>
+<option value="shape|1103.0|1491.0|322.0|85.0|Class_PxTn686D_AAAAXQU.html|Class_PxTn686D_AAAAXQU.html|PxTn686D.AAAAXQT" id="optionPxTn686D.AAAAXQT">Сведения о видах экономической деятельности по ОКВЭД : Class</option>
+<option value="shape|2.0|1353.0|322.0|94.0|Class_999H686D_AAAAXP7.html|Class_999H686D_AAAAXP7.html|999H686D.AAAAXP6" id="option999H686D.AAAAXP6">Сведения о доле в уставном капитале ООО, принадлежащей обществу : Class</option>
+<option value="shape|2.0|508.0|322.0|162.0|Class_mc17686D_AAAAXPe.html|Class_mc17686D_AAAAXPe.html|mc17686D.AAAAXPd" id="optionmc17686D.AAAAXPd">Сведения о паевом инвестиционном фонде, в состав имущества которого включена доля в уставном капитале  : Class</option>
+<option value="shape|1103.0|1624.0|322.0|99.0|Class_sOnr686D_AAAAXOp.html|Class_sOnr686D_AAAAXOp.html|MOnr686D.AAAAXOo" id="optionMOnr686D.AAAAXOo">Сведения о лице, осуществляющем управление долей, переходящей в порядке наследования : Class</option>
+<option value="shape|1103.0|1746.0|322.0|79.0|Class_TVLz686D_AAAAXN2.html|Class_TVLz686D_AAAAXN2.html|TVLz686D.AAAAXN1" id="optionTVLz686D.AAAAXN1">Сведения о доверительном управляющем : Class</option>
+<option value="shape|1836.0|2.0|322.0|179.0|Class_v4AJ686D_AAAAXKU.html|Class_v4AJ686D_AAAAXKU.html|H4AJ686D.AAAAXKC" id="optionH4AJ686D.AAAAXKC">Сведения об учредителе (участнике) : Class</option>
+<option value="shape|369.0|1492.0|322.0|88.0|Class_eno2686D_AAAAWKO.html|Class_eno2686D_AAAAWKO.html|eno2686D.AAAAWKN" id="optioneno2686D.AAAAWKN">Сведения о залогодержателе – ЮЛ : Class</option>
+<option value="shape|736.0|1352.0|322.0|91.0|Class_aRyG686D_AAAAWIm.html|Class_aRyG686D_AAAAWIm.html|aRyG686D.AAAAWIl" id="optionaRyG686D.AAAAWIl">Сведения о нотариальном удостоверении договора залога : Class</option>
+<option value="shape|369.0|1352.0|322.0|91.0|Class_mjHK686D_AAAAWGZ.html|Class_mjHK686D_AAAAWGZ.html|mjHK686D.AAAAWGY" id="optionmjHK686D.AAAAWGY">Сведения о залогодержателе – ФЛ : Class</option>
+<option value="shape|1837.0|507.0|322.0|141.0|Class_C3QS686D_AAAAWFg.html|Class_C3QS686D_AAAAWFg.html|C3QS686D.AAAAWFf" id="optionC3QS686D.AAAAWFf">Сведения об обременении доли участника : Class</option>
+<option value="shape|1836.0|1625.0|322.0|74.0|Class_48f8686D_AAAAWEY.html|Class_48f8686D_AAAAWEY.html|48f8686D.AAAAWEX" id="option48f8686D.AAAAWEX">Размер доли : Class</option>
+<option value="shape|2.0|1204.0|322.0|104.0|Class_cxPc686D_AAAAWD0.html|Class_cxPc686D_AAAAWD0.html|cxPc686D.AAAAWDz" id="optioncxPc686D.AAAAWDz">Сведения о доле учредителя (участника) : Class</option>
+<option value="shape|1103.0|507.0|322.0|155.0|Class_wEPM686D_AAAAWCv.html|Class_wEPM686D_AAAAWCv.html|wEPM686D.AAAAWCu" id="optionwEPM686D.AAAAWCu">Сведения о регистрации учредителя (участника) до 01072002 : Class</option>
+<option value="shape|369.0|895.0|322.0|112.0|Class_ZipU686D_AAAAV_N.html|Class_ZipU686D_AAAAV_N.html|ZipU686D.AAAAV_M" id="optionZipU686D.AAAAV_M">Сведения об учредителях (участниках) ЮЛ : Class</option>
+<option value="shape|1470.0|895.0|322.0|108.0|Class_oLxE686D_AAAAV_R.html|Class_oLxE686D_AAAAV_R.html|PzxE686D.AAAAV9_" id="optionPzxE686D.AAAAV9_">Сведения о дисквалификации : Class</option>
+<option value="shape|2.0|895.0|322.0|112.0|Class_P_Gw686D_AAAASrl.html|Class_P_Gw686D_AAAASrl.html|P.Gw686D.AAAASrk" id="optionP.Gw686D.AAAASrk">Сведения о должности ФЛ : Class</option>
+<option value="shape|736.0|894.0|322.0|111.0|Class_N8xg686D_AAAASqx.html|Class_N8xg686D_AAAASqx.html|R8xg686D.AAAASqf" id="optionR8xg686D.AAAASqf">Сведения о лице, имеющем право без доверенности действовать от имени ЮЛ : Class</option>
+<option value="shape|736.0|715.0|322.0|132.0|Class_b6E7a86D_AAAAQ40.html|Class_b6E7a86D_AAAAQ40.html|b6E7a86D.AAAAQ4z" id="optionb6E7a86D.AAAAQ4z">Сведения о ДУЛ : Class</option>
+<option value="shape|1470.0|1353.0|322.0|90.0|Class_rNTcC86D_AAAAVUO.html|Class_rNTcC86D_AAAAVUO.html|rNTcC86D.AAAAVUN" id="optionrNTcC86D.AAAAVUN">Сведения о рождении ФЛ : Class</option>
+<option value="shape|737.0|2.0|320.0|195.0|Class_Z_ZwC86D_AAAAVSY.html|Class_Z_ZwC86D_AAAAVSY.html|p_ZwC86D.AAAAVSX" id="optionp_ZwC86D.AAAAVSX">Сведения о ФЛ : Class</option>
+<option value="shape|1837.0|1204.0|322.0|98.0|Class_2h6QC86D_AAAAVRm.html|Class_2h6QC86D_AAAAVRm.html|Wh6QC86D.AAAAVRl" id="optionWh6QC86D.AAAAVRl">Сведения о лице, через которое иностранное юридическое лицо осуществляет полномочия управляющей организации : Class</option>
+<option value="shape|2.0|1746.0|322.0|71.0|Class_9Ev_886D_AAAAVQ3.html|Class_9Ev_886D_AAAAVQ3.html|9Ev_886D.AAAAVQ2" id="option9Ev_886D.AAAAVQ2">Сведения о контактном телефоне : Class</option>
+<option value="shape|736.0|1052.0|322.0|106.0|Class_guwD886D_AAAAVN7.html|Class_guwD886D_AAAAVN7.html|guwD886D.AAAAVN6" id="optionguwD886D.AAAAVN6">Сведения о регистрации в стране происхождения : Class</option>
+<option value="shape|1103.0|714.0|322.0|129.0|Class_Q44l886D_AAAAVLo.html|Class_Q44l886D_AAAAVLo.html|Q44l886D.AAAAVLn" id="optionQ44l886D.AAAAVLn">Сведения об управляющей организации : Class</option>
+<option value="shape|1837.0|1052.0|322.0|104.0|Class_HTVR886D_AAAAVKc.html|Class_HTVR886D_AAAAVKc.html|HTVR886D.AAAAVKb" id="optionHTVR886D.AAAAVKb">Сведения о нахождении хозяйственного общества в процессе уменьшения уставного капитала : Class</option>
+<option value="shape|736.0|1863.0|322.0|52.0|Class_qqOuc86D_AAAAVJU.html|Class_qqOuc86D_AAAAVJU.html|KqOuc86D.AAAAVJT" id="optionKqOuc86D.AAAAVJT">Доля рубля в капитале : Class</option>
+<option value="shape|736.0|507.0|322.0|157.0|Class_Bqn2c86D_AAAAVGQ.html|Class_Bqn2c86D_AAAAVGQ.html|mqn2c86D.AAAAVF." id="optionmqn2c86D.AAAAVF.">Сведения о размере указанного в учредительных документах коммерческой организации уставного капитала (складочного капитала, уставного фонда, паевого фонда) : Class</option>
+<option value="shape|369.0|1746.0|322.0|67.0|Class_vM8Yc86D_AAAATru.html|Class_vM8Yc86D_AAAATru.html|rM8Yc86D.AAAATrc" id="optionrM8Yc86D.AAAATrc">Сведения об исполнительном органе ФССРФ : Class</option>
+<option value="shape|369.0|714.0|322.0|133.0|Class_9e0Ic86D_AAAAS5Z.html|Class_9e0Ic86D_AAAAS5Z.html|9e0Ic86D.AAAAS5Y" id="option9e0Ic86D.AAAAS5Y">Сведения о регистрации юридического лица в качестве страхователя в ФССРФ, ПФРФ : Class</option>
+<option value="shape|736.0|1746.0|322.0|65.0|Class_q4Egc86D_AAAASly.html|Class_q4Egc86D_AAAASly.html|K4Egc86D.AAAASlx" id="optionK4Egc86D.AAAASlx">Сведения о территориальном органе ПФРФ : Class</option>
+<option value="shape|1103.0|1204.0|322.0|102.0|Class_5WzLs86D_AAAASGA.html|Class_5WzLs86D_AAAASGA.html|5WzLs86D.AAAASF_" id="option5WzLs86D.AAAASF_">Сведения о налоговом органе : Class</option>
+<option value="shape|1103.0|1353.0|322.0|90.0|Class_eQyDs86D_AAAASEh.html|Class_eQyDs86D_AAAASEh.html|OQyDs86D.AAAASEg" id="optionOQyDs86D.AAAASEg">Способ прекращения юридического лица : Class</option>
+<option value="shape|736.0|1625.0|322.0|76.0|Class_ojS9s86D_AAAASEQ.html|Class_ojS9s86D_AAAASEQ.html|IjS9s86D.AAAASEP" id="optionIjS9s86D.AAAASEP">Сведения о прекращении юридического лица : Class</option>
+<option value="shape|1470.0|1204.0|322.0|98.0|Class_YSDNs86D_AAAASDu.html|Class_YSDNs86D_AAAASDu.html|YSDNs86D.AAAASDt" id="optionYSDNs86D.AAAASDt">Сведения о решении о предстоящем исключении недействующего ЮЛ из ЕГРЮЛ и его публикации : Class</option>
+<option value="shape|1837.0|1747.0|322.0|62.0|Class_u6PVs86D_AAAASAd.html|Class_u6PVs86D_AAAASAd.html|u6PVs86D.AAAASAc" id="optionu6PVs86D.AAAASAc">Сведения о правоспособности (статусе) юридического лица : Class</option>
+<option value="shape|736.0|1491.0|322.0|85.0|Class_LqcVs86D_AAAASAI.html|Class_LqcVs86D_AAAASAI.html|NqcVs86D.AAAAR_2" id="optionNqcVs86D.AAAAR_2">Сведения о состоянии (статусе) юридического лица : Class</option>
+<option value="shape|1470.0|1051.0|322.0|105.0|Class_5ibRs86D_AAAARSO.html|Class_5ibRs86D_AAAARSO.html|5ibRs86D.AAAARSN" id="option5ibRs86D.AAAARSN">Сведения о регистрирующем органе по месту нахождения юридического лица : Class</option>
+<option value="shape|369.0|1625.0|322.0|76.0|Class_InV_s86D_AAAAQ1T.html|Class_InV_s86D_AAAAQ1T.html|wnV.s86D.AAAAQ1S" id="optionwnV.s86D.AAAAQ1S">Способ образования юридического лица : Class</option>
+<option value="shape|1470.0|507.0|322.0|147.0|Class_r0gms86D_AAAAQ0j.html|Class_r0gms86D_AAAAQ0j.html|r0gms86D.AAAAQ0i" id="optionr0gms86D.AAAAQ0i">Сведения о регистрации (образовании) юридического лица : Class</option>
+<option value="shape|1470.0|1747.0|322.0|62.0|Class_5y4qs86D_AAAAQz9.html|Class_5y4qs86D_AAAAQz9.html|5y4qs86D.AAAAQz8" id="option5y4qs86D.AAAAQz8">Сведения об адресе электронной почты : Class</option>
+<option value="shape|2.0|1492.0|322.0|88.0|Class_1dXis86D_AAAAQzb.html|Class_1dXis86D_AAAAQzb.html|1dXis86D.AAAAQza" id="option1dXis86D.AAAAQza">Сведения о решении суда : Class</option>
+<option value="shape|2.0|1970.0|322.0|48.0|Class_dC1nE86D_AAAAT7U.html|Class_dC1nE86D_AAAAT7U.html|BC1nE86D.AAAAT7C" id="optionBC1nE86D.AAAAT7C">Субъект РФ : Class</option>
+<option value="shape|1469.0|1863.0|323.0|50.0|Class_YYW1E86D_AAAATdx.html|Class_YYW1E86D_AAAATdx.html|HoW1E86D.AAAATdf" id="optionHoW1E86D.AAAATdf">ГРН запись : Class</option>
+<option value="shape|2.0|2.0|322.0|461.0|Class_aW_uE86D_AAAASYc.html|Class_aW_uE86D_AAAASYc.html|qW_uE86D.AAAASYb" id="optionqW_uE86D.AAAASYb">Сведения о ЮЛ : Class</option>
+<option value="shape|1838.0|1863.0|322.0|48.0|Class_7B4OE86D_AAAASYJ.html|Class_7B4OE86D_AAAASYJ.html|7B4OE86D.AAAASYI" id="option7B4OE86D.AAAASYI">Состав и структура документа : Class</option>
+<option value="shape|369.0|1863.0|322.0|52.0|Class_jyFyE86D_AAAASRh.html|Class_jyFyE86D_AAAASRh.html|DyFyE86D.AAAASRg" id="optionDyFyE86D.AAAASRg">Сведения об отправителе : Class</option>
+<option value="shape|2.0|714.0|322.0|135.0|Class_pZHN486D_AAAAQkR.html|Class_pZHN486D_AAAAQkR.html|GZHN486D.AAAAQkQ" id="optionGZHN486D.AAAAQkQ">ПИР ФНС ЕГРЮЛ : Class</option>
+</select>				</td>
+			</tr>
+		</table>
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: relative; top: 24;">
+			<tr>
+				<td>
+					<img id="diagram" src="../images/_5.png" usemap="#diagram_map" class="Image" width="2164" height="2115"/>
+					<map name="diagram_map">
+<area imageId="diagram" coords="546, 369, 675, 409" coords2="546, 369, 675, 409" shape="rect" alt="Тип элемента Улица:Class" id="areadiagram_map_d9_1AC6D.AAAAYVg_default" href="Class_d9_1AC6D_AAAAYVh.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="892, 366, 1094, 406" coords2="892, 366, 1094, 406" shape="rect" alt="Тип элемента Населенный пункт:Class" id="areadiagram_map_d431AC6D.AAAAYVX_default" href="Class_d431AC6D_AAAAYVY.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="719, 366, 847, 406" coords2="719, 366, 847, 406" shape="rect" alt="Тип элемента Район:Class" id="areadiagram_map_7V71AC6D.AAAAYVO_default" href="Class_HV71AC6D_AAAAYVP.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="372, 369, 502, 409" coords2="372, 369, 502, 409" shape="rect" alt="Тип Элемента Город:Class" id="areadiagram_map_nrz1AC6D.AAAAYVF_default" href="Class_Xrz1AC6D_AAAAYVG.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1104, 233, 1424, 340" coords2="1104, 233, 1424, 340" shape="rect" alt="ФИО, ИНН:Class" id="areadiagram_map_jSFOP86D.AAAAZVU_default" href="Class_jSFOP86D_AAAAZVV.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1469, 1624, 1790, 1699" coords2="1469, 1624, 1790, 1699" shape="rect" alt="Сведения о КФХ:Class" id="areadiagram_map_Us8Qj86D.AAAAaMz_default" href="Class_Cs8Qj86D_AAAAaNF.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="369, 1051, 691, 1158" coords2="369, 1051, 691, 1158" shape="rect" alt="Сведения о наименовании ЮЛ:Class" id="areadiagram_map_YM3iN86D.AAAAUMx_default" href="Class_YM3iN86D_AAAAUMy.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="736, 2063, 1058, 2103" coords2="736, 2063, 1058, 2103" shape="rect" alt="Дата:Class" id="areadiagram_map_avLoN86D.AAAAUEi_default" href="Class_2vLoN86D_AAAAUE0.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="368, 2, 691, 278" coords2="368, 2, 691, 278" shape="rect" alt="Адрес РФ:Class" id="areadiagram_map_TDul186AU_W0dxI4_default" href="Class_zDul186AU_W0dxI6.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" coords="2, 1051, 324, 1158" coords2="2, 1051, 324, 1158" shape="rect" alt="Сведения о недостоверности:Class" id="areadiagram_map_ABgVu86D.AAAAVsQ_default" href="Class_ABgVu86D_AAAAVsR.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1470, 715, 1792, 835" coords2="1470, 715, 1792, 835" shape="rect" alt="Сведения о виде учредителя (участника) и (при необходимости) наименовании муниципального образования и региона:Class" id="areadiagram_map_HFk5u86D.AAAAVre_default" href="Class_HFk5u86D_AAAAVrf.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1837, 715, 2159, 829" coords2="1837, 715, 2159, 829" shape="rect" alt="Сведения о юридическом лице, от имени которого действует заявитель:Class" id="areadiagram_map_nx5ou86D.AAAAUiB_default" href="Class_nx5ou86D_AAAAUiC.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="369, 2063, 691, 2111" coords2="369, 2063, 691, 2111" shape="rect" alt="Заявитель:Class" id="areadiagram_map_3BiQu86D.AAAAUg._default" href="Class_3BiQu86D_AAAAUg_.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2, 2063, 324, 2111" coords2="2, 2063, 324, 2111" shape="rect" alt="Сведения о статусе записи:Class" id="areadiagram_map_y3FKG86D.AAAAYkn_default" href="Class_y3FKG86D_AAAAYko.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2, 1624, 324, 1701" coords2="2, 1624, 324, 1701" shape="rect" alt="Сведения о свидетельстве, подтверждающем факт внесения записи в ЕГРЮЛ:Class" id="areadiagram_map_U3hKG86D.AAAAYkS_default" href="Class_U3hKG86D_AAAAYkT.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="736, 1204, 1058, 1308" coords2="736, 1204, 1058, 1308" shape="rect" alt="Сведения о документах, представленных при внесении записи в ЕГРЮЛ:Class" id="areadiagram_map_ptOKG86D.AAAAYkD_default" href="Class_ptOKG86D_AAAAYkE.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1837, 1353, 2159, 1443" coords2="1837, 1353, 2159, 1443" shape="rect" alt="Сведения о заявителе:Class" id="areadiagram_map_U46KG86D.AAAAYjx_default" href="Class_046KG86D_AAAAYjy.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2, 1863, 324, 1925" coords2="2, 1863, 324, 1925" shape="rect" alt="Сведения о регистрирующем (налоговом) органе:Class" id="areadiagram_map_.wiKG86D.AAAAYjg_default" href="Class__wiKG86D_AAAAYjh.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1837, 1970, 2159, 2018" coords2="1837, 1970, 2159, 2018" shape="rect" alt="Сведения о причине внесения записи:Class" id="areadiagram_map_RFaSG86D.AAAAYie_default" href="Class_ZFaSG86D_AAAAYiw.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1102, 2, 1424, 191" coords2="1102, 2, 1424, 191" shape="rect" alt="Сведения о записях, внесенных в ЕГРЮЛ:Class" id="areadiagram_map_To6CG86D.AAAAXdC_default" href="Class_zo6CG86D_AAAAXdD.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1103, 1052, 1425, 1158" coords2="1103, 1052, 1425, 1158" shape="rect" alt="Сведения о правопредшественнике и правопреемнике:Class" id="areadiagram_map_5GMUG86D.AAAAXZi_default" href="Class_5GMUG86D_AAAAXZj.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1837, 894, 2159, 1001" coords2="1837, 894, 2159, 1001" shape="rect" alt="Сведения о юридических лицах, участвующих в реорганизации:Class" id="areadiagram_map_PVtkG86D.AAAAXZP_default" href="Class_PVtkG86D_AAAAXZQ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="369, 1204, 691, 1308" coords2="369, 1204, 691, 1308" shape="rect" alt="Сведения о форме реорганизации (статусе) ЮЛ:Class" id="areadiagram_map_RStEG86D.AAAAXYr_default" href="Class_RStEG86D_AAAAXYs.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1103, 1862, 1425, 1913" coords2="1103, 1862, 1425, 1913" shape="rect" alt="Сведения об участии в реорганизации:Class" id="areadiagram_map_mzCEG86D.AAAAXYZ_default" href="Class_mzCEG86D_AAAAXYa.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1103, 895, 1425, 1005" coords2="1103, 895, 1425, 1005" shape="rect" alt="Сведения о представительствах, филиалах, иных ЮЛ:Class" id="areadiagram_map_qK0YG86D.AAAAXWr_default" href="Class_aK0YG86D_AAAAXWs.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1837, 1491, 2159, 1570" coords2="1837, 1491, 2159, 1570" shape="rect" alt="Сведения об учете в налоговом органе:Class" id="areadiagram_map_8mdoG86D.AAAAXWR_default" href="Class_CmdoG86D_AAAAXWS.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="369, 508, 691, 666" coords2="369, 508, 691, 666" shape="rect" alt="Адрес Ин:Class" id="areadiagram_map_rwJoG86D.AAAAXWC_default" href="Class_rwJoG86D_AAAAXWD.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1470, 1491, 1792, 1576" coords2="1470, 1491, 1792, 1576" shape="rect" alt="Сведения о приостановлении действия лицензии:Class" id="areadiagram_map_Fbs_686D.AAAAXR6_default" href="Class_Fbs_686D_AAAAXR7.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1469, 2, 1791, 190" coords2="1469, 2, 1791, 190" shape="rect" alt="Сведения о лицензиях, выданных ЮЛ:Class" id="areadiagram_map_bFoP686D.AAAAXQ9_default" href="Class_7FoP686D_AAAAXQ_.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1103, 1491, 1425, 1576" coords2="1103, 1491, 1425, 1576" shape="rect" alt="Сведения о видах экономической деятельности по ОКВЭД:Class" id="areadiagram_map_PxTn686D.AAAAXQT_default" href="Class_PxTn686D_AAAAXQU.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2, 1353, 324, 1447" coords2="2, 1353, 324, 1447" shape="rect" alt="Сведения о доле в уставном капитале ООО, принадлежащей обществу:Class" id="areadiagram_map_999H686D.AAAAXP6_default" href="Class_999H686D_AAAAXP7.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2, 508, 324, 670" coords2="2, 508, 324, 670" shape="rect" alt="Сведения о паевом инвестиционном фонде, в состав имущества которого включена доля в уставном капитале :Class" id="areadiagram_map_mc17686D.AAAAXPd_default" href="Class_mc17686D_AAAAXPe.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1103, 1624, 1425, 1723" coords2="1103, 1624, 1425, 1723" shape="rect" alt="Сведения о лице, осуществляющем управление долей, переходящей в порядке наследования:Class" id="areadiagram_map_MOnr686D.AAAAXOo_default" href="Class_sOnr686D_AAAAXOp.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1103, 1746, 1425, 1825" coords2="1103, 1746, 1425, 1825" shape="rect" alt="Сведения о доверительном управляющем:Class" id="areadiagram_map_TVLz686D.AAAAXN1_default" href="Class_TVLz686D_AAAAXN2.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1836, 2, 2158, 181" coords2="1836, 2, 2158, 181" shape="rect" alt="Сведения об учредителе (участнике):Class" id="areadiagram_map_H4AJ686D.AAAAXKC_default" href="Class_v4AJ686D_AAAAXKU.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" coords="369, 1492, 691, 1580" coords2="369, 1492, 691, 1580" shape="rect" alt="Сведения о залогодержателе – ЮЛ:Class" id="areadiagram_map_eno2686D.AAAAWKN_default" href="Class_eno2686D_AAAAWKO.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="736, 1352, 1058, 1443" coords2="736, 1352, 1058, 1443" shape="rect" alt="Сведения о нотариальном удостоверении договора залога:Class" id="areadiagram_map_aRyG686D.AAAAWIl_default" href="Class_aRyG686D_AAAAWIm.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="369, 1352, 691, 1443" coords2="369, 1352, 691, 1443" shape="rect" alt="Сведения о залогодержателе – ФЛ:Class" id="areadiagram_map_mjHK686D.AAAAWGY_default" href="Class_mjHK686D_AAAAWGZ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1837, 507, 2159, 648" coords2="1837, 507, 2159, 648" shape="rect" alt="Сведения об обременении доли участника:Class" id="areadiagram_map_C3QS686D.AAAAWFf_default" href="Class_C3QS686D_AAAAWFg.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1836, 1625, 2158, 1699" coords2="1836, 1625, 2158, 1699" shape="rect" alt="Размер доли:Class" id="areadiagram_map_48f8686D.AAAAWEX_default" href="Class_48f8686D_AAAAWEY.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2, 1204, 324, 1308" coords2="2, 1204, 324, 1308" shape="rect" alt="Сведения о доле учредителя (участника):Class" id="areadiagram_map_cxPc686D.AAAAWDz_default" href="Class_cxPc686D_AAAAWD0.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1103, 507, 1425, 662" coords2="1103, 507, 1425, 662" shape="rect" alt="Сведения о регистрации учредителя (участника) до 01072002:Class" id="areadiagram_map_wEPM686D.AAAAWCu_default" href="Class_wEPM686D_AAAAWCv.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="369, 895, 691, 1007" coords2="369, 895, 691, 1007" shape="rect" alt="Сведения об учредителях (участниках) ЮЛ:Class" id="areadiagram_map_ZipU686D.AAAAV_M_default" href="Class_ZipU686D_AAAAV_N.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1470, 895, 1792, 1003" coords2="1470, 895, 1792, 1003" shape="rect" alt="Сведения о дисквалификации:Class" id="areadiagram_map_PzxE686D.AAAAV9__default" href="Class_oLxE686D_AAAAV_R.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" coords="2, 895, 324, 1007" coords2="2, 895, 324, 1007" shape="rect" alt="Сведения о должности ФЛ:Class" id="areadiagram_map_P.Gw686D.AAAASrk_default" href="Class_P_Gw686D_AAAASrl.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="736, 894, 1058, 1005" coords2="736, 894, 1058, 1005" shape="rect" alt="Сведения о лице, имеющем право без доверенности действовать от имени ЮЛ:Class" id="areadiagram_map_R8xg686D.AAAASqf_default" href="Class_N8xg686D_AAAASqx.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="736, 715, 1058, 847" coords2="736, 715, 1058, 847" shape="rect" alt="Сведения о ДУЛ:Class" id="areadiagram_map_b6E7a86D.AAAAQ4z_default" href="Class_b6E7a86D_AAAAQ40.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1470, 1353, 1792, 1443" coords2="1470, 1353, 1792, 1443" shape="rect" alt="Сведения о рождении ФЛ:Class" id="areadiagram_map_rNTcC86D.AAAAVUN_default" href="Class_rNTcC86D_AAAAVUO.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="737, 2, 1057, 197" coords2="737, 2, 1057, 197" shape="rect" alt="Сведения о ФЛ:Class" id="areadiagram_map_p_ZwC86D.AAAAVSX_default" href="Class_Z_ZwC86D_AAAAVSY.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1837, 1204, 2159, 1302" coords2="1837, 1204, 2159, 1302" shape="rect" alt="Сведения о лице, через которое иностранное юридическое лицо осуществляет полномочия управляющей организации:Class" id="areadiagram_map_Wh6QC86D.AAAAVRl_default" href="Class_2h6QC86D_AAAAVRm.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" coords="2, 1746, 324, 1817" coords2="2, 1746, 324, 1817" shape="rect" alt="Сведения о контактном телефоне:Class" id="areadiagram_map_9Ev_886D.AAAAVQ2_default" href="Class_9Ev_886D_AAAAVQ3.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="736, 1052, 1058, 1158" coords2="736, 1052, 1058, 1158" shape="rect" alt="Сведения о регистрации в стране происхождения:Class" id="areadiagram_map_guwD886D.AAAAVN6_default" href="Class_guwD886D_AAAAVN7.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1103, 714, 1425, 843" coords2="1103, 714, 1425, 843" shape="rect" alt="Сведения об управляющей организации:Class" id="areadiagram_map_Q44l886D.AAAAVLn_default" href="Class_Q44l886D_AAAAVLo.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1837, 1052, 2159, 1156" coords2="1837, 1052, 2159, 1156" shape="rect" alt="Сведения о нахождении хозяйственного общества в процессе уменьшения уставного капитала:Class" id="areadiagram_map_HTVR886D.AAAAVKb_default" href="Class_HTVR886D_AAAAVKc.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;&amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="736, 1863, 1058, 1915" coords2="736, 1863, 1058, 1915" shape="rect" alt="Доля рубля в капитале:Class" id="areadiagram_map_KqOuc86D.AAAAVJT_default" href="Class_qqOuc86D_AAAAVJU.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+    &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+  &amp;lt;/body&amp;gt;" coords="736, 507, 1058, 664" coords2="736, 507, 1058, 664" shape="rect" alt="Сведения о размере указанного в учредительных документах коммерческой организации уставного капитала (складочного капитала, уставного фонда, паевого фонда):Class" id="areadiagram_map_mqn2c86D.AAAAVF._default" href="Class_Bqn2c86D_AAAAVGQ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="369, 1746, 691, 1813" coords2="369, 1746, 691, 1813" shape="rect" alt="Сведения об исполнительном органе ФССРФ:Class" id="areadiagram_map_rM8Yc86D.AAAATrc_default" href="Class_vM8Yc86D_AAAATru.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="369, 714, 691, 847" coords2="369, 714, 691, 847" shape="rect" alt="Сведения о регистрации юридического лица в качестве страхователя в ФССРФ, ПФРФ:Class" id="areadiagram_map_9e0Ic86D.AAAAS5Y_default" href="Class_9e0Ic86D_AAAAS5Z.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="736, 1746, 1058, 1811" coords2="736, 1746, 1058, 1811" shape="rect" alt="Сведения о территориальном органе ПФРФ:Class" id="areadiagram_map_K4Egc86D.AAAASlx_default" href="Class_q4Egc86D_AAAASly.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1103, 1204, 1425, 1306" coords2="1103, 1204, 1425, 1306" shape="rect" alt="Сведения о налоговом органе:Class" id="areadiagram_map_5WzLs86D.AAAASF__default" href="Class_5WzLs86D_AAAASGA.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1103, 1353, 1425, 1443" coords2="1103, 1353, 1425, 1443" shape="rect" alt="Способ прекращения юридического лица:Class" id="areadiagram_map_OQyDs86D.AAAASEg_default" href="Class_eQyDs86D_AAAASEh.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="736, 1625, 1058, 1701" coords2="736, 1625, 1058, 1701" shape="rect" alt="Сведения о прекращении юридического лица:Class" id="areadiagram_map_IjS9s86D.AAAASEP_default" href="Class_ojS9s86D_AAAASEQ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1470, 1204, 1792, 1302" coords2="1470, 1204, 1792, 1302" shape="rect" alt="Сведения о решении о предстоящем исключении недействующего ЮЛ из ЕГРЮЛ и его публикации:Class" id="areadiagram_map_YSDNs86D.AAAASDt_default" href="Class_YSDNs86D_AAAASDu.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1837, 1747, 2159, 1809" coords2="1837, 1747, 2159, 1809" shape="rect" alt="Сведения о правоспособности (статусе) юридического лица:Class" id="areadiagram_map_u6PVs86D.AAAASAc_default" href="Class_u6PVs86D_AAAASAd.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="736, 1491, 1058, 1576" coords2="736, 1491, 1058, 1576" shape="rect" alt="Сведения о состоянии (статусе) юридического лица:Class" id="areadiagram_map_NqcVs86D.AAAAR_2_default" href="Class_LqcVs86D_AAAASAI.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1470, 1051, 1792, 1156" coords2="1470, 1051, 1792, 1156" shape="rect" alt="Сведения о регистрирующем органе по месту нахождения юридического лица:Class" id="areadiagram_map_5ibRs86D.AAAARSN_default" href="Class_5ibRs86D_AAAARSO.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="369, 1625, 691, 1701" coords2="369, 1625, 691, 1701" shape="rect" alt="Способ образования юридического лица:Class" id="areadiagram_map_wnV.s86D.AAAAQ1S_default" href="Class_InV_s86D_AAAAQ1T.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1470, 507, 1792, 654" coords2="1470, 507, 1792, 654" shape="rect" alt="Сведения о регистрации (образовании) юридического лица:Class" id="areadiagram_map_r0gms86D.AAAAQ0i_default" href="Class_r0gms86D_AAAAQ0j.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1470, 1747, 1792, 1809" coords2="1470, 1747, 1792, 1809" shape="rect" alt="Сведения об адресе электронной почты:Class" id="areadiagram_map_5y4qs86D.AAAAQz8_default" href="Class_5y4qs86D_AAAAQz9.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2, 1492, 324, 1580" coords2="2, 1492, 324, 1580" shape="rect" alt="Сведения о решении суда:Class" id="areadiagram_map_1dXis86D.AAAAQza_default" href="Class_1dXis86D_AAAAQzb.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2, 1970, 324, 2018" coords2="2, 1970, 324, 2018" shape="rect" alt="Субъект РФ:Class" id="areadiagram_map_BC1nE86D.AAAAT7C_default" href="Class_dC1nE86D_AAAAT7U.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1469, 1863, 1792, 1913" coords2="1469, 1863, 1792, 1913" shape="rect" alt="ГРН запись:Class" id="areadiagram_map_HoW1E86D.AAAATdf_default" href="Class_YYW1E86D_AAAATdx.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2, 2, 324, 463" coords2="2, 2, 324, 463" shape="rect" alt="Сведения о ЮЛ:Class" id="areadiagram_map_qW_uE86D.AAAASYb_default" href="Class_aW_uE86D_AAAASYc.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1838, 1863, 2160, 1911" coords2="1838, 1863, 2160, 1911" shape="rect" alt="Состав и структура документа:Class" id="areadiagram_map_7B4OE86D.AAAASYI_default" href="Class_7B4OE86D_AAAASYJ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1040;&amp;#1090;&amp;#1088;&amp;#1080;&amp;#1073;&amp;#1091;&amp;#1090; &amp;#1089;&amp;#1086;&amp;#1073;&amp;#1089;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1079;&amp;#1085;&amp;#1072;&amp;#1095;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; &amp;#1085;&amp;#1077; &amp;#1080;&amp;#1084;&amp;#1077;&amp;#1077;&amp;#1090;, &amp;#1085;&amp;#1077;&amp;#1086;&amp;#1073;&amp;#1093;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1084; &amp;#1076;&amp;#1083;&amp;#1103; &amp;#1086;&amp;#1090;&amp;#1086;&amp;#1073;&amp;#1088;&amp;#1072;&amp;#1078;&amp;#1077;&amp;#1085;&amp;#1080;&amp;#1103; 
+      &amp;#1083;&amp;#1086;&amp;#1075;&amp;#1080;&amp;#1095;&amp;#1077;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1081; &amp;#1075;&amp;#1088;&amp;#1091;&amp;#1087;&amp;#1087;&amp;#1080;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1082;&amp;#1080; &amp;#1087;&amp;#1086;&amp;#1083;&amp;#1077;&amp;#1081;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="369, 1863, 691, 1915" coords2="369, 1863, 691, 1915" shape="rect" alt="Сведения об отправителе:Class" id="areadiagram_map_DyFyE86D.AAAASRg_default" href="Class_jyFyE86D_AAAASRh.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;&amp;quot;&amp;gt;
+      &amp;#1055;&amp;#1072;&amp;#1089;&amp;#1087;&amp;#1086;&amp;#1088;&amp;#1090; &amp;#1080;&amp;#1085;&amp;#1092;&amp;#1086;&amp;#1088;&amp;#1084;&amp;#1072;&amp;#1094;&amp;#1080;&amp;#1086;&amp;#1085;&amp;#1085;&amp;#1086;&amp;#1075;&amp;#1086; &amp;#1088;&amp;#1077;&amp;#1089;&amp;#1091;&amp;#1088;&amp;#1089;&amp;#1072; &amp;#1060;&amp;#1053;&amp;#1057; &amp;#1045;&amp;#1043;&amp;#1056;&amp;#1070;&amp;#1051;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2, 714, 324, 849" coords2="2, 714, 324, 849" shape="rect" alt="ПИР ФНС ЕГРЮЛ:Class" id="areadiagram_map_GZHN486D.AAAAQkQ_default" href="Class_pZHN486D_AAAAQkR.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+</map>
+				</td>
+			</tr>
+		</table>
+		<p>
+		</p>
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Description</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_d9_1AC6D_AAAAYVh.html" class="ItemLink">Тип элемента Улица : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_d431AC6D_AAAAYVY.html" class="ItemLink">Тип элемента Населенный пункт : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_HV71AC6D_AAAAYVP.html" class="ItemLink">Тип элемента Район : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_Xrz1AC6D_AAAAYVG.html" class="ItemLink">Тип Элемента Город : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_jSFOP86D_AAAAZVV.html" class="ItemLink">ФИО, ИНН : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_Cs8Qj86D_AAAAaNF.html" class="ItemLink">Сведения о КФХ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_YM3iN86D_AAAAUMy.html" class="ItemLink">Сведения о наименовании ЮЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_2vLoN86D_AAAAUE0.html" class="ItemLink">Дата : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_zDul186AU_W0dxI6.html" class="ItemLink">Адрес РФ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_ABgVu86D_AAAAVsR.html" class="ItemLink">Сведения о недостоверности : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_HFk5u86D_AAAAVrf.html" class="ItemLink">Сведения о виде учредителя (участника) и (при необходимости) наименовании муниципального образования и региона : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_nx5ou86D_AAAAUiC.html" class="ItemLink">Сведения о юридическом лице, от имени которого действует заявитель : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_3BiQu86D_AAAAUg_.html" class="ItemLink">Заявитель : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_y3FKG86D_AAAAYko.html" class="ItemLink">Сведения о статусе записи : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_U3hKG86D_AAAAYkT.html" class="ItemLink">Сведения о свидетельстве, подтверждающем факт внесения записи в ЕГРЮЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_ptOKG86D_AAAAYkE.html" class="ItemLink">Сведения о документах, представленных при внесении записи в ЕГРЮЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_046KG86D_AAAAYjy.html" class="ItemLink">Сведения о заявителе : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class__wiKG86D_AAAAYjh.html" class="ItemLink">Сведения о регистрирующем (налоговом) органе : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_ZFaSG86D_AAAAYiw.html" class="ItemLink">Сведения о причине внесения записи : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_zo6CG86D_AAAAXdD.html" class="ItemLink">Сведения о записях, внесенных в ЕГРЮЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_5GMUG86D_AAAAXZj.html" class="ItemLink">Сведения о правопредшественнике и правопреемнике : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_PVtkG86D_AAAAXZQ.html" class="ItemLink">Сведения о юридических лицах, участвующих в реорганизации : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_RStEG86D_AAAAXYs.html" class="ItemLink">Сведения о форме реорганизации (статусе) ЮЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_mzCEG86D_AAAAXYa.html" class="ItemLink">Сведения об участии в реорганизации : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_aK0YG86D_AAAAXWs.html" class="ItemLink">Сведения о представительствах, филиалах, иных ЮЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_CmdoG86D_AAAAXWS.html" class="ItemLink">Сведения об учете в налоговом органе : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_rwJoG86D_AAAAXWD.html" class="ItemLink">Адрес Ин : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_Fbs_686D_AAAAXR7.html" class="ItemLink">Сведения о приостановлении действия лицензии : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_7FoP686D_AAAAXQ_.html" class="ItemLink">Сведения о лицензиях, выданных ЮЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_PxTn686D_AAAAXQU.html" class="ItemLink">Сведения о видах экономической деятельности по ОКВЭД : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_999H686D_AAAAXP7.html" class="ItemLink">Сведения о доле в уставном капитале ООО, принадлежащей обществу : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_mc17686D_AAAAXPe.html" class="ItemLink">Сведения о паевом инвестиционном фонде, в состав имущества которого включена доля в уставном капитале  : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_sOnr686D_AAAAXOp.html" class="ItemLink">Сведения о лице, осуществляющем управление долей, переходящей в порядке наследования : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_TVLz686D_AAAAXN2.html" class="ItemLink">Сведения о доверительном управляющем : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_v4AJ686D_AAAAXKU.html" class="ItemLink">Сведения об учредителе (участнике) : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_eno2686D_AAAAWKO.html" class="ItemLink">Сведения о залогодержателе – ЮЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_aRyG686D_AAAAWIm.html" class="ItemLink">Сведения о нотариальном удостоверении договора залога : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_mjHK686D_AAAAWGZ.html" class="ItemLink">Сведения о залогодержателе – ФЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_C3QS686D_AAAAWFg.html" class="ItemLink">Сведения об обременении доли участника : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_48f8686D_AAAAWEY.html" class="ItemLink">Размер доли : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_cxPc686D_AAAAWD0.html" class="ItemLink">Сведения о доле учредителя (участника) : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_wEPM686D_AAAAWCv.html" class="ItemLink">Сведения о регистрации учредителя (участника) до 01072002 : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_ZipU686D_AAAAV_N.html" class="ItemLink">Сведения об учредителях (участниках) ЮЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_oLxE686D_AAAAV_R.html" class="ItemLink">Сведения о дисквалификации : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_P_Gw686D_AAAASrl.html" class="ItemLink">Сведения о должности ФЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_N8xg686D_AAAASqx.html" class="ItemLink">Сведения о лице, имеющем право без доверенности действовать от имени ЮЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_b6E7a86D_AAAAQ40.html" class="ItemLink">Сведения о ДУЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_rNTcC86D_AAAAVUO.html" class="ItemLink">Сведения о рождении ФЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_Z_ZwC86D_AAAAVSY.html" class="ItemLink">Сведения о ФЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_2h6QC86D_AAAAVRm.html" class="ItemLink">Сведения о лице, через которое иностранное юридическое лицо осуществляет полномочия управляющей организации : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_9Ev_886D_AAAAVQ3.html" class="ItemLink">Сведения о контактном телефоне : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_guwD886D_AAAAVN7.html" class="ItemLink">Сведения о регистрации в стране происхождения : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_Q44l886D_AAAAVLo.html" class="ItemLink">Сведения об управляющей организации : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_HTVR886D_AAAAVKc.html" class="ItemLink">Сведения о нахождении хозяйственного общества в процессе уменьшения уставного капитала : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_qqOuc86D_AAAAVJU.html" class="ItemLink">Доля рубля в капитале : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &nbsp;&#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_Bqn2c86D_AAAAVGQ.html" class="ItemLink">Сведения о размере указанного в учредительных документах коммерческой организации уставного капитала (складочного капитала, уставного фонда, паевого фонда) : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+    &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_vM8Yc86D_AAAATru.html" class="ItemLink">Сведения об исполнительном органе ФССРФ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_9e0Ic86D_AAAAS5Z.html" class="ItemLink">Сведения о регистрации юридического лица в качестве страхователя в ФССРФ, ПФРФ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_q4Egc86D_AAAASly.html" class="ItemLink">Сведения о территориальном органе ПФРФ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_5WzLs86D_AAAASGA.html" class="ItemLink">Сведения о налоговом органе : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_eQyDs86D_AAAASEh.html" class="ItemLink">Способ прекращения юридического лица : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_ojS9s86D_AAAASEQ.html" class="ItemLink">Сведения о прекращении юридического лица : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_YSDNs86D_AAAASDu.html" class="ItemLink">Сведения о решении о предстоящем исключении недействующего ЮЛ из ЕГРЮЛ и его публикации : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_u6PVs86D_AAAASAd.html" class="ItemLink">Сведения о правоспособности (статусе) юридического лица : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_LqcVs86D_AAAASAI.html" class="ItemLink">Сведения о состоянии (статусе) юридического лица : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_5ibRs86D_AAAARSO.html" class="ItemLink">Сведения о регистрирующем органе по месту нахождения юридического лица : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_InV_s86D_AAAAQ1T.html" class="ItemLink">Способ образования юридического лица : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_r0gms86D_AAAAQ0j.html" class="ItemLink">Сведения о регистрации (образовании) юридического лица : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_5y4qs86D_AAAAQz9.html" class="ItemLink">Сведения об адресе электронной почты : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_1dXis86D_AAAAQzb.html" class="ItemLink">Сведения о решении суда : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_dC1nE86D_AAAAT7U.html" class="ItemLink">Субъект РФ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_YYW1E86D_AAAATdx.html" class="ItemLink">ГРН запись : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_aW_uE86D_AAAASYc.html" class="ItemLink">Сведения о ЮЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_7B4OE86D_AAAASYJ.html" class="ItemLink">Состав и структура документа : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_jyFyE86D_AAAASRh.html" class="ItemLink">Сведения об отправителе : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090;, &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; 
+      &#1083;&#1086;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1075;&#1088;&#1091;&#1087;&#1087;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080; &#1087;&#1086;&#1083;&#1077;&#1081;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_pZHN486D_AAAAQkR.html" class="ItemLink">ПИР ФНС ЕГРЮЛ : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;margin-right:0;">
+    <p style="margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;margin-right:0pt;">
+      &#1055;&#1072;&#1089;&#1087;&#1086;&#1088;&#1090; &#1080;&#1085;&#1092;&#1086;&#1088;&#1084;&#1072;&#1094;&#1080;&#1086;&#1085;&#1085;&#1086;&#1075;&#1086; &#1088;&#1077;&#1089;&#1091;&#1088;&#1089;&#1072; &#1060;&#1053;&#1057; &#1045;&#1043;&#1056;&#1070;&#1051;
+    </p>
+  </body></span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		ПИР	</div>
+</body>
+</html>
